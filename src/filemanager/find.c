@@ -648,8 +648,7 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
    
 
-    only_directories_cbox = check_new (y2++, x1, options.only_directories, file_only_directories_label);
-    add_widget (find_dlg, only_directories_cbox);
+    
     in_name =
         input_new (y1++, x1, input_get_default_colors (), cw, INPUT_LAST_TEXT, "name",
                    INPUT_COMPLETE_FILENAMES | INPUT_COMPLETE_CD);
@@ -678,6 +677,9 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
     file_case_sens_cbox = check_new (y1++, x1, options.file_case_sens, file_case_label);
     add_widget (find_dlg, file_case_sens_cbox);
+    
+    only_directories_cbox = check_new (y1++, x1, options.only_directories, file_only_directories_label);
+    add_widget (find_dlg, only_directories_cbox);
 
 #ifdef HAVE_CHARSET
     file_all_charsets_cbox =
