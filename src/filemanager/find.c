@@ -123,7 +123,7 @@ static int find_do_edit_file (WButton * button, int action);
 /* Parsed ignore dirs */
 static char **find_ignore_dirs = NULL;
 
-static int FIND_Y = 18;
+
 
 /* static variables to remember find parameters */
 static WInput *in_start;        /* Start path */
@@ -544,7 +544,7 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
     /* column width */
     int cw;
 
-    int cbox_position;
+   
     gboolean disable;
 
 #ifdef ENABLE_NLS
@@ -646,9 +646,9 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
     y2 = y1;
 
-    cbox_position = FIND_Y - 5;
+   
 
-    only_directories_cbox = check_new (cbox_position--, 3, options.only_directories, file_only_directories_label);
+    only_directories_cbox = check_new (y2++, x1, options.only_directories, file_only_directories_label);
     add_widget (find_dlg, only_directories_cbox);
     in_name =
         input_new (y1++, x1, input_get_default_colors (), cw, INPUT_LAST_TEXT, "name",
