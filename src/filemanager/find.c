@@ -674,13 +674,14 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
     file_pattern_cbox = check_new (y1++, x1, options.file_pattern, file_pattern_label);
     add_widget (find_dlg, file_pattern_cbox);
-
-    file_case_sens_cbox = check_new (y1++, x1, options.file_case_sens, file_case_label);
-    add_widget (find_dlg, file_case_sens_cbox);
     
     only_directories_cbox = check_new (y1++, x1, options.only_directories, file_only_directories_label);
     add_widget (find_dlg, only_directories_cbox);
 
+    file_case_sens_cbox = check_new (y1++, x1, options.file_case_sens, file_case_label);
+    add_widget (find_dlg, file_case_sens_cbox);
+    
+    
 #ifdef HAVE_CHARSET
     file_all_charsets_cbox =
         check_new (y1++, x1, options.file_all_charsets, file_all_charsets_label);
